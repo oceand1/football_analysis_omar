@@ -1,0 +1,10 @@
+ff-version: X.X.X
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: ""
+  given-names: ""
+title: ""
+version: X.X.X
+doi: "*Should obtain this after registering the software"
+date-released: YYYY-MM-DD
+url: "https://github.com/mllam/neural-lam"
