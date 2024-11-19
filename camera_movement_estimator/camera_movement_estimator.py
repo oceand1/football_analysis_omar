@@ -52,7 +52,7 @@ class CameraMovementEstimator():
 
         for frame_num in range(1, len(frames)):
             frame_gray = cv2.cvtColor(frames[frame_num], cv2.COLOR_BGR2GRAY)
-            new_features, _,_ = cv2.calcOpticalFlowPyrLK(old_gray, frame_gray, old_features, None, **self.lk_params)
+            new_features, _, _ = cv2.calcOpticalFlowPyrLK(old_gray, frame_gray, old_features, None, **self.lk_params)
 
             max_distance = 0
             camera_movement_x, camera_movement_y = 0, 0
@@ -62,7 +62,7 @@ class CameraMovementEstimator():
                 old_features_point = old.ravel()
 
                 distance = measure_distance(new_features_point, old_features_point)
-                if distance>max_distance:
+                if distance > max_distance:
                     max_distance = distance
                     camera_movement_x, camera_movement_y = measure_xy_distance(old_features_point, new_features_point)
 
